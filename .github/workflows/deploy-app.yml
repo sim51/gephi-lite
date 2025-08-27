@@ -21,14 +21,14 @@ jobs:
       - name: Install
         run: npm install
 
+      - uses: nyaa8/package-version@v1
+        with:
+          path: "packages/gephi-lite/package.json"
+
       - name: Build
         run: npm run build
         env:
           BASE_URL: /gephi-lite/v${{ env.PACKAGE_VERSION }}
-
-      - uses: nyaa8/package-version@v1
-        with:
-          path: "packages/gephi-lite/package.json"
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
