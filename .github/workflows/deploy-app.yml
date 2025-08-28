@@ -44,14 +44,16 @@ jobs:
           <html lang="en-US">
             <head>
               <meta charset="UTF-8">
-              <meta http-equiv="refresh" content="0; url=/gephi-lite/v${{ env.PACKAGE_VERSION }}">
+              <noscript>
+              <meta http-equiv="refresh" content="0; url=/gephi-lite/v${{ env.PACKAGE_VERSION }}/">
+              </noscript>
               <script type="text/javascript">
-                window.location.href = "/gephi-lite/v${{ env.PACKAGE_VERSION }}"
+                window.location.href = "/gephi-lite/v${{ env.PACKAGE_VERSION }}/"  + (window.location.search || '') + (window.location.hash || '')
               </script>
               <title>Page Redirection</title>
             </head>
             <body>
-                If you are not redirected automatically, follow this <a href='/gephi-lite/v${{ env.PACKAGE_VERSION }}'>link to example</a>.
+                If you are not redirected automatically, follow this <a href='/gephi-lite/v${{ env.PACKAGE_VERSION }}/'>link to example</a>.
             </body>
           </html>
           EOF
